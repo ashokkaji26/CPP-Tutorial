@@ -1,0 +1,152 @@
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+1.What is Text ??
+
+
+ In the context of computers and programming, "text" generally refers to a sequence of characters that can be read and understood by humans.
+ These characters can include letters, numbers, symbols, and spaces. Text is a fundamental data type used to represent and store information in a human-readable format.
+
+Here's a breakdown of what "text" implies:
+
+1. Sequence of Characters: Text is essentially an ordered collection of characters.
+
+2. Human-Readable: The primary purpose of text is to convey information that humans can easily understand.
+
+3. Encoding: Text is usually encoded using character encoding standards like ASCII, UTF-8, or UTF-16, which assign numerical values to each character.
+
+4. Data Type: In programming, text is often represented using the "string" data type. A string is a sequence of characters enclosed in quotation marks (e.g., "Hello, world!").
+
+Examples of Text:
+
+1. "This is a sample text."
+2. "12345" (even though it contains numbers, it's still text if treated as a string)
+3. "Hello, how are you?"
+4. "~!@#$%^&*"
+
+In essence, "text" is the form of data that represents human language and symbols in a way that computers can store and process, and humans can read and understand.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+2. How computers processes texts??
+
+
+Yes, that's essentially correct. When a computer processes text, it internally represents each character as a numerical value according to a specific character encoding standard, such as ASCII or UTF-8.
+
+Here's a more detailed explanation:
+
+1. Character Encoding: Character encoding is a system that maps characters to numerical values (code points).
+ ASCII is one of the earliest and simplest character encodings, but it only supports a limited set of characters (mainly English letters, numbers, and symbols).
+  UTF-8 is a more modern and widely used encoding that supports a much broader range of characters, including those from different languages.
+
+2. Representation: When a computer stores or processes text, it doesn't store the characters directly. 
+Instead, it stores the numerical code points that correspond to those characters according to the chosen encoding.
+ For example, if the computer is using ASCII encoding, the character 'A' would be stored as the number 65.
+
+3. Rendering: When the computer needs to display text on the screen or print it on paper,
+ it retrieves the numerical code points and uses the character encoding to look up the corresponding characters.
+  It then uses a font to render the characters visually.
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+3. How computer processes text "I love you, 143 ?" ? 
+
+
+Okay, let's break down how a computer would process the text "I love you, 143 ?" using the ASCII encoding system. Remember that ASCII assigns a unique number to each character.
+
+Here's a character-by-character breakdown:
+
+Character	ASCII Value
+I	73
+space 32
+l	108
+o	111
+v	118
+e	101
+space 32
+y	121
+o	111
+u	117
+,	44
+space 32
+1	49
+4	52
+3	51
+space 32
+?	63
+
+
+Process:
+
+1. Input: The computer receives the text "I love you, 143 ?".
+
+2. Encoding: The computer iterates through each character in the text. For each character, it looks up its corresponding ASCII value.
+
+3. Representation: The text is then represented internally as a sequence of these ASCII values: 73, 32, 108, 111, 118, 101, 32, 121, 111, 117, 44, 32, 49, 52, 51, 32, 63 
+
+4. Storage/Processing: These numerical values are stored in the computer's memory. The computer can then perform various operations on this data, such as displaying it on the screen, transmitting it over a network, or analyzing it.
+
+5. Output (Display): When the computer needs to display the text, it retrieves the sequence of ASCII values. For each value, it looks up the corresponding character in the ASCII table and renders that character on the screen using a font.
+
+So, the text "I love you, 143 ?" is internally represented as a sequence of numbers, each representing a character according to the ASCII standard.
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+4.  numbers as text V/S numbers as numerical values. 
+
+
+--> Great question! It's important to distinguish between how computers handle numbers as text versus numbers as numerical values.
+
+** Numbers as Text (Characters):
+
+--> As we've discussed, when numbers are treated as text (i.e., part of a string), each digit is encoded as a separate character using a character encoding like ASCII.
+For example, the string "123" would be stored as the ASCII values for '1', '2', and '3' (49, 50, and 51, respectively). 
+In this case, the computer doesn't interpret "123" as the numerical value one hundred and twenty-three; it simply sees a sequence of three characters.
+
+** Numbers as Numerical Values:
+
+--> When you want the computer to perform mathematical operations or treat something as a numerical quantity, you use numerical data types like int, float, or double. In this case, the number is stored in a completely different format, using binary representation.
+
+Here's a simplified overview of how it works for integers:
+
+a. Binary Representation: Computers use the binary number system (base-2), which consists of only two digits: 0 and 1. Every number can be represented as a combination of 0s and 1s.
+
+b. Storage: An integer variable (e.g., int x = 123;) is allocated a certain number of bits in memory (e.g., 32 bits). The numerical value is then converted into its binary equivalent and stored in those bits.
+
+For example, the decimal number 123 is equivalent to the binary number 01111011. This binary representation would be stored in the allocated memory.
+
+c. Processing: When the computer performs arithmetic operations (addition, subtraction, multiplication, etc.) on these numerical values, it operates directly on the binary representations using the rules of binary arithmetic.
+Floating-Point Numbers:
+
+--> Floating-point numbers (like float and double) are stored using a more complex format based on scientific notation. They consist of three parts:
+
+a. Sign: Indicates whether the number is positive or negative.
+
+b. Mantissa (Significand): Represents the significant digits of the number.
+
+c. Exponent: Indicates the power of 2 by which the mantissa should be multiplied.
+
+--> This representation allows computers to store a wide range of numbers, including very large and very small values, but with limited precision.
+
+In Summary:
+
+--> Textual Numbers (Strings): Each digit is encoded as a character using ASCII or a similar encoding. The computer treats them as symbols, not numerical values.
+Numerical Values (int, float, double): Numbers are converted into binary format and stored in memory according to the data type. The computer can then perform mathematical operations directly on these binary representations.
+The key difference is that textual numbers are for representing human-readable characters, while numerical values are for performing calculations and mathematical operations.
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
