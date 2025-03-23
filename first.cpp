@@ -2,6 +2,6 @@
 using namespace std;
 
 int main(){
-    cout<<"I'm coming";
+    cout<< string("love").length() <<endl;
     return 0;
 }

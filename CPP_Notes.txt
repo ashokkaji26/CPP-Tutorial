@@ -143,10 +143,77 @@ The key difference is that textual numbers are for representing human-readable c
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
------------------------------------------------------------------------------------------------------------------------------------------------
+5. Operators:- 
+
+  1. Compound Assignment Operators:- 
+                                  Compound Assignment Operators are just a shorthand way of performing operations on a variable and assigning the result back to the variable.
+
+x -= 5        (Subtracts 5 from x and assigns the result back to x)
+x *= 3        (Multiplies x by 3 and assigns the result back to x)
+x /= 3        (Divides x by 3 and assigns the result back to x)
+x %= 3        (Finds the remainder when x is divided by 3 and assigns the result back to x)
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
+6. Why use brackets around condition?
+
+--> it is important to enclose the condition in brackets else C++ will throw an error.
+
+-->  The following code will throw an error:-
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int height1 = 15;
+    int height2 = 13;
+    cout<<height1 != height2;
+}
+
+--> This is because the << operator has higher precedence than the != operator. So, the compiler will try to evaluate cout << height1 first, and then compare the result with height2 which is not what we want.
+
+--> The corrected code is:-
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int height1 = 15;
+    int height2 = 13;
+    cout<<(height1 != height2);
+}
 -----------------------------------------------------------------------------------------------------------------------------------------------
+
+7. Operator precedence:- 
+
+Parentheses: ()
+Postfix operators: ++, --
+Unary operators: +, -, !, ~, ++, --, (type)
+Multiplicative operators: *, /, %
+Additive operators: +, -
+Relational operators: <, >, <=, >=
+Equality operators: ==, !=
+Logical AND operator: &&
+Logical OR operator: ||
+Assignment operators: =, +=, -= 
+
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+8. String data type:- A string variable contains a collection of characters surrounded by double quotes.
+
+  --> Concatenation:- The '+' sign can be used between strings to add them together to make a new string.
+                      This is called concatenation.
+
+  --> C++ uses the + sign for both addition and concatenation.
+
+        a. Numbers are added.
+        b. Strings are concatenated.
+        c. We cannot mix the two.
+
+  *** String functions:- 
+            a. append()
+            b. length()
+            c. substr(starting index, no. of characters``) is a string function which is used to extract a substring from a given string.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
