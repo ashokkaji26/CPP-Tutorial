@@ -318,6 +318,57 @@ Q. What is a bug ?
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
+12. Array :- 1. Array is a variable, & it is used to store multiple values in a single variable.
+             2. An array is a data structure that allow us to store multiple values in a single variable, making it efficient to manage
+                large collection of data.
+
+  --> To declare an array:-
+                            1. define the variable data type.
+                            2. Specify the name of array followed by square brackets.
+                            3. In square brackets, specify the no. of elements it should store.
+
+  Q. Can array size be changed later ?
+    --> No, No, the size of an array in C++ is fixed at the time of its declaration. Once you define an array with a specific size, 
+        you cannot change its size later during the execution of the program. If you need a data structure that can dynamically grow or shrink, you should use std::vector instead of an array.
+
+  
+  ** important things to keep in mind about array:- 
+      1. Arrays have a fixed size.
+      2. If we need an array of a different size, we have to declare a new one.
+      3. Arrays can only hold elements of the same data type.
+
+  ** Accessing elements of an Array:- 
+    --> Arrays use indexes, which are the positions of each element in the array.
+    --> In c++, index starts at 0.
+
+
+  Q. what does contiguous block of memory means?
+    --> When you declare an array, the compiler finds a contiguous block of memory large enough to hold all the elements of the array. 
+        So, if you declare an array of 5 integers, the compiler finds 5 consecutive memory locations (each large enough to hold an integer) and assigns them to your array.
+
+        This contiguity is crucial for efficient array access because it allows the compiler to quickly calculate the address of any element by simply adding an offset to the starting address of the array, 
+        as we discussed earlier. If the memory wasn't contiguous, the compiler would need to use a more complex lookup mechanism to find each element, which would slow things down.
+
+  *** Q. Why does indexing start from 0?
+        --> The reason indexing starts from 0 in C++ (and many other programming languages) is rooted in how memory addresses are calculated.
+
+        --> Imagine an array as a contiguous block of memory. The array's name actually represents the memory address of the very first element in the array.
+
+        --> When you access an element using arr[i], what the compiler does is:
+
+          1. Take the starting address of the array (arr).
+          2. Add "i * the size of each element" to that address. This gives you the memory address of the element you want.
+          3. Go to that memory address and retrieve the value.
+          4. So, arr[0] is really saying "give me the value at the starting address arr + 0 * (size of an element)", which is the first element. 
+            arr[1] means "give me the value at the starting address arr + 1 * (size of an element)", which is the second element, and so on.
+
+      ---> If indexing started at 1, the calculation would be slightly more complex (and potentially less efficient). 
+           Starting at 0 makes the address arithmetic cleaner and more direct.
+
+      ** sizeof() operator returns the size of a variable or data type in bytes.
+      --> sizeof(arr);    it will give size of arr in bytes.
+      --> sizeof(arr) / sizeof(arr[0]);    it will give the no. of elements in array.
+
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
