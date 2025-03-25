@@ -186,16 +186,16 @@ int main() {
 
 7. Operator precedence:- 
 
-Parentheses: ()
-Postfix operators: ++, --
-Unary operators: +, -, !, ~, ++, --, (type)
-Multiplicative operators: *, /, %
-Additive operators: +, -
-Relational operators: <, >, <=, >=
-Equality operators: ==, !=
-Logical AND operator: &&
-Logical OR operator: ||
-Assignment operators: =, +=, -= 
+        Postfix operators: ++, --
+        Parentheses: ()
+        Unary operators: +, -, !, ~, ++, --, (type)
+        Multiplicative operators: *, /, %
+        Additive operators: +, -
+        Relational operators: <, >, <=, >=
+        Equality operators: ==, !=
+        Logical AND operator: &&
+        Logical OR operator: ||
+        Assignment operators: =, +=, -= 
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
@@ -253,7 +253,68 @@ Assignment operators: =, +=, -=
   --> When writing an if or else if you don't mention a block of code using curly brackets it executes only the first statement of the if or else section.
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
+
+10. how to use switch statements instead of multiple if-else statements??
+
+  --> In many situations we need to perforn different actions based on a specific value.
+  --> switch allows us to evaluate a single variable or expression and then execute the matching block of code.
+  --> Each option is represented by a case label followed by the code for that case. 
+  --> After executing the code for a matching case, we use the break keyword to exit the switch block.
+  --> Without the break statement the program would fall through and execute the code for the next cases even if they don't match.
+  --> The default case ensures the program handles unexpected input gracefully.
+  --> switch statements provide a clean and organized way to handle multiple values of a single variable. 
+
+  Q. when to use a switch statement instead of an if-else chain?
+     --> Use a switch statement when:
+        1. You have a single variable you want to compare to multiple constant values.
+           The switch statement provides a cleaner and more readable way to handle multiple comparisons against the same variable.
+        2. All the conditions depend on the same variable. If you're checking different conditions based on different variables,
+           if-else is generally more appropriate.
+  
+  --> char operator = '+';
+      switch ( variable or expression ){
+        case '-': 
+          cout << "Subtraction" <<endl;
+          break;
+        case '+':
+          cout << "Addition" <<endl;
+          break;
+        case '*':
+          cout << "Product" <<endl;
+          break;
+        case '/':
+          cout<< "division" <<endl;
+          break;
+        default:
+          cout << "Unknown Operator" <<endl;
+      }
+
+
+  Q. Can switch handle complex conditions?
+
+    --> No, switch statements are not designed to handle complex conditions. They are specifically for checking a single variable against a series of constant values.
+
+        In C++, the case labels in a switch statement must be constant expressions (e.g., literal values, enum constants, or constexpr variables). 
+        You cannot use variables, ranges, or complex boolean expressions (like x > 5 && y < 10) directly in the case labels.
+
+        If you need to evaluate complex conditions, an if-else if-else chain is the more appropriate choice.
+
+Q. Can we use strings in switch statement ?
+
+  --> No, you cannot use strings in a switch statement in C++. The switch statement only works with integral or enumeration types. 
+      If you need to compare strings, you should use if-else statements instead.
 -----------------------------------------------------------------------------------------------------------------------------------------------
+
+11.  Debugging :- Finding and finxing errors in code.
+
+Q. What is a bug ?
+  --> A bug is an error that causes our program to generate an unexpected output that is different from our expected output or no output. 
+
+    a. CE - Compilation error / Syntax error
+    RE - Run-time error
+    WA - Wrong answer / Logical error
+    TLE - Time limit exceeded
+
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
