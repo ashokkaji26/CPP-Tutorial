@@ -148,40 +148,40 @@ The key difference is that textual numbers are for representing human-readable c
   1. Compound Assignment Operators:- 
                                   Compound Assignment Operators are just a shorthand way of performing operations on a variable and assigning the result back to the variable.
 
-x -= 5        (Subtracts 5 from x and assigns the result back to x)
-x *= 3        (Multiplies x by 3 and assigns the result back to x)
-x /= 3        (Divides x by 3 and assigns the result back to x)
-x %= 3        (Finds the remainder when x is divided by 3 and assigns the result back to x)
+ x -= 5        (Subtracts 5 from x and assigns the result back to x)
+ x *= 3        (Multiplies x by 3 and assigns the result back to x)
+ x /= 3        (Divides x by 3 and assigns the result back to x)
+ x %= 3        (Finds the remainder when x is divided by 3 and assigns the result back to x)
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
 6. Why use brackets around condition?
 
---> it is important to enclose the condition in brackets else C++ will throw an error.
+ --> it is important to enclose the condition in brackets else C++ will throw an error.
 
--->  The following code will throw an error:-
+ -->  The following code will throw an error:-
 
-#include <iostream>
-using namespace std;
+ #include <iostream>
+ using namespace std;
 
-int main() {
+ int main() {
     int height1 = 15;
     int height2 = 13;
     cout<<height1 != height2;
-}
+ }
 
---> This is because the << operator has higher precedence than the != operator. So, the compiler will try to evaluate cout << height1 first, and then compare the result with height2 which is not what we want.
+ --> This is because the << operator has higher precedence than the != operator. So, the compiler will try to evaluate cout << height1 first, and then compare the result with height2 which is not what we want.
 
---> The corrected code is:-
+ --> The corrected code is:-
 
-#include <iostream>
-using namespace std;
+ #include <iostream>
+ using namespace std;
 
-int main() {
+ int main() {
     int height1 = 15;
     int height2 = 13;
     cout<<(height1 != height2);
-}
+ }
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
 7. Operator precedence:- 
@@ -234,7 +234,7 @@ int main() {
 
   **** If-Else can handle multiple conditions using "else-if".
 
---> if (condition1) {
+ --> if (condition1) {
        // Code to execute if condition1 is true
       } else if (condition2) {
         // Code to execute if condition1 is false AND condition2 is true
@@ -244,9 +244,9 @@ int main() {
        // Code to execute if ALL conditions are false
       }
 
---> The 'else if' keyword means "if the previous conditions were not true, then try this condition".
+ --> The 'else if' keyword means "if the previous conditions were not true, then try this condition".
 
---> The 'else' keyword includes anything which isn't included in the previous conditions.`
+ --> The 'else' keyword includes anything which isn't included in the previous conditions.`
 
   --> C++ relies on curly brackets ('{' in the beginning and '}' at the end) to know what part of code is inside the if part of the code and what is not. Whatever is inside curly brackets is considered as one block of code.
 
@@ -299,7 +299,7 @@ int main() {
 
         If you need to evaluate complex conditions, an if-else if-else chain is the more appropriate choice.
 
-Q. Can we use strings in switch statement ?
+ Q. Can we use strings in switch statement ?
 
   --> No, you cannot use strings in a switch statement in C++. The switch statement only works with integral or enumeration types. 
       If you need to compare strings, you should use if-else statements instead.
@@ -307,7 +307,7 @@ Q. Can we use strings in switch statement ?
 
 11.  Debugging :- Finding and finxing errors in code.
 
-Q. What is a bug ?
+ Q. What is a bug ?
   --> A bug is an error that causes our program to generate an unexpected output that is different from our expected output or no output. 
 
     a. CE - Compilation error / Syntax error
@@ -371,12 +371,128 @@ Q. What is a bug ?
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
------------------------------------------------------------------------------------------------------------------------------------------------
+
+13. Control structures:- In programming, control structures are rules that determines the order of execution of code.
+
+    --> A Control Structure in programming is a rule or framework that determines the order of execution of code. 
+        It controls the flow of a program and decides which part of the code runs when and how many times.
+
+    ** Types of Control Structures:-
+
+              1. Sequential control:- The code runs line by line from top to bottom.
+                  --> No special conditions or loops are used.
+
+              2. Selection control - conditional statements
+                  --> Used for decision making(if-else,switch).
+                  --> if a condition is true, one block of code runs; otherwise, another block runs.
+
+              3. Iteration control - loops
+                  --> Iteration refers to executing a block of code repeatedly.
+                  --> Iteration control used when we need to repeat a task multiple times.
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
+14. Loops:- Loops can execute a block of code as long as a specified contion is reached.
+
+    1. While loop:- The while loop, loops through a block of code as long as a specified condition is true.
+          --> while (condition) {
+            // code to be executed
+          }
+
+  ** Important points to keep in mind while using loops:-
+
+    a. When using a loop you have to think about three things - initialisation, condition and update statement.
+    b. So think about what we initialise the variable with? i.e., Where does the sequence start form?
+    c. Think about what the condition will be? i.e., Till where is the sequence going?
+    d. Also think about how the variable will be updating after every iteration. How the terms in the sequence are changing?
+
+    2. Do-while loop :- The do-while loop is a type of while loop.
+        --> This loop will execute the code block once, before checking if the condition is true, 
+            then it will repeat the loop as long as the condition is true.
+        --> do {
+          // code to be executed
+        } while(condition);
+
+    ** When to use do/while:
+
+      a. When you need to execute a block of code at least once, regardless of the initial condition.
+      b. When you want to perform some action before checking the condition for the first time.
+          When you know exactly how many times you want to loop through a block of code, use the for loop instead of a while loop
+
+    3. For loop:- When you know exactly how many times you want to loop through a block of code, use the for loop instead of a while loop
+
+        --> for(initialisation; condition; updation){
+          // code to be executed
+        }
+
+    ** Break statement inside Loops:- break statement is used to terminate the iteration process and exit the loop.
+      --> break statement only exits loop or switch in which it is contained.
+
+    ** Continue statement :- The Continue statement skips one iteration in the loop, if a specified condition occurs, and Continues with next iterations in loop.
+
+    Q. Can continue work outside loops?
+      --> No, continue cannot work outside of loops (e.g., for, while, or do-while loops). The continue statement is specifically designed to alter the flow of control within a loop, 
+          skipping the remaining part of the current iteration and proceeding to the next iteration. Using it outside a loop will result in a compilation error.
+
+    4. For each loop :- This loop is used exclusively to loop through elements in an array.
+
+        --> for (array_type loop_variable : array_name ) {
+          // code to be executed.
+        }
+
+        --> Here the loop variable holds the value of each element of the array one by one.
+
+        --> The for-each loop simplifies iterating through each element of an array (or other collections) without needing to manage indices. 
+        -->Here's a breakdown:
+
+             a. Initialization: The loop starts at the first element of the array.
+             b. Assignment: The value of the current element is assigned to the loop_variable.
+             c. Execution: The code block inside the loop is executed, using the current value stored in the loop_variable.
+             d. Iteration: The loop moves to the next element in the array, and steps 2 and 3 are repeated.
+             e. Termination: The loop continues until all elements in the array have been processed.
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
+15. Nested Loops :- Nested loops are a powerful programming contruct where one loop is placed inside another.
+
+  Q. Why use nested loops for patterns?
+    --> Nested loops are commonly used for printing patterns becasue they allow us to control both the rows and 
+        columns of the patterns. The outer loop typically handles the rows, while the inner loop handles the elements
+        within each row. By varying the number of iterations and the output within the inner loop based on the current row and column, you can create different patterns.
+
+        
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+16. Function :- A function can do one of two things.
+
+                1. Print values directly inside the function. => void functions.
+
+                  --> void calculate_Sum (int a, int b) {
+                    int sum = a + b;
+                    cout << sum <<endl;
+                  }
+
+                2. Return a value that can be used later.  => return functions.
+                  --> To return a value, we must specify the data type of the value being returned.
+
+                  int calculate_Sum ( int a, int b) {
+                    int sum = a + b;
+                    return sum;
+                  }
+
+                  --> How do we use this returned value ??
+
+                    --> Option_1 : To print the returned valule directly by wrapping the function call inside a cout statement.
+                        int main() {
+                          cout << calculate_Sum(3,4) << endl;
+                        }
+
+                    --> Option_2 : To store the returned value in a variable. allowing us to use the value elsewhere in the program.
+                        int main() {
+                          int sum;
+                          sum = calculate_Sum(3,4);
+                          int avg = sum / 2;
+                          cout << avg <<endl;
+                        }
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
