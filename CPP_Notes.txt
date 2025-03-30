@@ -493,6 +493,94 @@ The key difference is that textual numbers are for representing human-readable c
                           int avg = sum / 2;
                           cout << avg <<endl;
                         }
+
+            ** Note:- functions allow us to break down a complex program into smaller, manageable modules.
+                      Each function can represent a specific task or functionality.
+                      Once defined, functions can be reused in different parts of the program or even in different programs, promoting code reuse and saving development time.
+
+
+            ** Anatomy of a function :- 
+                a. return_type: The type of value the function returns. It can be int, double, char, void, etc. If the function doesn’t return a value, void is used.
+                b. function_name: Name of the function (should be descriptive).
+                c. parameters: Inputs that the function accepts, enclosed in parentheses and separated by commas (can be optional). Each parameter has a type, followed by the parameter name, e.g., int x.
+                d. Function body: Code block enclosed in braces { } where the function performs its task.
+                e. return: Optional statement to return a value from the function. If the return type is void, no return statement is needed, unless you want to exit the function prematurely.
+
+            ** To exit any function :- 
+              1. return :- If the function's return_type is void, you use return; without any value to exit the function.
+              2. return 0 :- If the function's return_type is int, then return 0; is a common practice to indicate successful execution of the program. You can return any integer value.
+
+
+          *** Variable scope :- Scope in Cpp can be broadly categorized into two types: global scope and local scope.
+
+            1. Global scope :- 
+              a. Variables and functions defined outside of any function or class have global scope.
+              b. Theseentities can be accessed from anywhere in the code, both inside and outside functions or classes.
+
+            2. Local scope :- 
+              a. Variables defined within a function have local scope, meaning they are accessible only within that function.
+              b. Local scope is limited to the function where the variable is defined.
+
+            ** Accessing Variables from Different Scopes:- 
+              a. A function can access variables in its local scope, as well as variables in the global scope.
+              b. However, a local variable will take precedence over a global variable if they have the same name.
+
+            ** Predefined functions :- Predefined functions are ready to use and can be directly incorporated into your C++ programs without needing to create their definitions.
+
+              --> Here are some common categories of predefined functions in C++:-
+                 
+                a. Input/Output Functions:
+                    You would have to include iostream package to use these functions cout: Used to print formatted output to the console.
+                    cin: Used to read formatted input from the console.
+                    setprecision : Used to set the ios library floating point precision based on the precision specified as the parameter to this method.
+
+                b.  Mathematical Functions:
+                    You would have to include cmath package to use these functions sqrt(): Calculates the square root of a number.
+                    abs(): Calculates the absolute value of a number.
+                    pow(): Calculates the power of a number.
+                    ceil(), floor(): Round a number to the nearest integer.
+
+                c.  Memory operators:
+                    new : Allocate memory dynamically.
+                    delete : Deallocate memory.
+
+                d.  Time Functions:
+                    time(): Get the current time.
+                    ctime(): Convert time to a string.
+                    difftime(): Calculate the difference between two times.
+
+                e.  File Handling Functions:
+                    fopen(), fclose(): Open and close files.
+                    fread(), fwrite(): Read and write data from/to files.
+
+
+      ** Inline function:- n C++, an inline function is a function that is expanded in line when it is called. This means that instead of performing a typical function call, where the control is transferred to the function's code, the compiler replaces the function call with the actual code of the function. This can potentially make the program run faster by eliminating the overhead associated with function calls.
+
+        ** Why Use Inline Functions?
+          --> a. Performance Improvement: For small functions, the overhead of a function call can be significant. Inline functions eliminate this overhead.
+              b. Readability and Maintainability: By using inline functions, you can keep your code clean and readable while avoiding the drawbacks of macros.
+
+        ** How to Define an Inline Function?
+           --> To define an inline function, you use the inline keyword before the function definition.
+           --> inline returnType functionName(parameters) {
+                                                              // function body
+                                                          }
+
+         ** When to Use Inline Functions :- 
+                a. Small Functions: Inline functions are most effective for small, frequently called functions. If the function is large, the overhead of function calls becomes negligible compared to the execution time of the function's code.
+                b. Performance-Critical Code: Use inline functions in performance-critical sections of your code where every bit of optimization matters.
+
+         ** When Not to Use Inline Functions :- 
+                a. Large Functions: If a function is large, inlining it can increase the size of the binary significantly, potentially causing issues with cache performance and memory usage.
+                b. Recursive Functions: Inline functions should not be used for recursive functions, as inlining would cause an infinite inlining loop.
+
+         ** Important Point to Remember :- 
+          --> Inline is a Request, Not a Command: The inline keyword is a request to the compiler, not a command. The compiler may choose to ignore the request if it decides that inlining is not beneficial.
+
+
+     ** function overloading :- Read about it.
+                                                 
+
 -----------------------------------------------------------------------------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------------------------------------------------------------------------
