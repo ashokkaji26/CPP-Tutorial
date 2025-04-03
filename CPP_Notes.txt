@@ -574,6 +574,7 @@ The key difference is that textual numbers are for representing human-readable c
                 a. Large Functions: If a function is large, inlining it can increase the size of the binary significantly, potentially causing issues with cache performance and memory usage.
                 b. Recursive Functions: Inline functions should not be used for recursive functions, as inlining would cause an infinite inlining loop.
 
+
          ** Important Point to Remember :- 
           --> Inline is a Request, Not a Command: The inline keyword is a request to the compiler, not a command. The compiler may choose to ignore the request if it decides that inlining is not beneficial.
 
