@@ -1,39 +1,47 @@
 #include <iostream>
 #include <vector>
-#include <algorithm>
+#define MOD 1000000007
 using namespace std;
 
+// Function to precompute factorials modulo MOD
+vector<long long> precomputeFactorials(int maxN) {
+    vector<long long> factorial(maxN + 1, 1);
+    for (int i = 2; i <= maxN; ++i) {
+        factorial[i] = (factorial[i - 1] * i) % MOD;
+    }
+    return factorial;
+}
+
 int main() {
-    int Test_cases;
-    cin >> Test_cases;
-    
-    while (Test_cases--) {
-        int N, K, D;
-        cin >> N >> K >> D;
-        
-        vector<int> T_i(N);
-        for (int i = 0; i < N; ++i) {
-            cin >> T_i[i];
+    int T;
+    cin >> T;
+
+    // Find the maximum N in the input
+    int maxN = 0;
+    vector<pair<int, long long>> testCases(T);
+    for (int i = 0; i < T; ++i) {
+        int N;
+        long long K;
+        cin >> N >> K;
+        testCases[i] = {N, K};
+        maxN = max(maxN, N);
+    }
+
+    // Precompute factorials up to maxN
+    vector<long long> factorial = precomputeFactorials(maxN);
+
+    // Process each test case
+    for (const auto& testCase : testCases) {
+        int N = testCase.first;
+        long long K = testCase.second;
+
+        // If K == 0, the sequence is constant, and the result is 1
+        if (K == 0) {
+            cout << 1 << endl;
+        } else {
+            // Otherwise, the result is N! % MOD
+            cout << factorial[N] << endl;
         }
-        
-        if (K >= N) {
-            cout << 0 << endl;
-            continue;
-        }
-        
-        int maxActive = N - K;
-        
-        sort(T_i.begin(), T_i.end());
-        
-        int totalPlucks = 0;
-        
-        for (int i = 0; i < maxActive; ++i) {
-            int growTime = T_i[i];
-            int plucks = 1 + (D - 1) / growTime;
-            totalPlucks += plucks;
-        }
-        
-        cout << totalPlucks << endl;
     }
 
     return 0;
